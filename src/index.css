@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-bg text-fg font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  ::selection {
+    background: #e8703a;
+    color: #0d0d0d;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-tight tracking-tightish;
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-content px-6 md:px-10;
+  }
+
+  .label {
+    @apply text-[11px] font-medium uppercase tracking-[0.22em] text-faint;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition-all duration-200 will-change-transform;
+  }
+
+  /* Primary: solid orange. Secondary: transparent, muted off-white border.
+     Both lift + brighten subtly on hover — no bounce, no colour flash. */
+  .btn-accent {
+    @apply btn bg-accent text-bg;
+  }
+  .btn-accent:hover {
+    @apply -translate-y-0.5 bg-accent-hover;
+  }
+
+  .btn-outline {
+    @apply btn border border-fg/25 text-fg;
+  }
+  .btn-outline:hover {
+    @apply -translate-y-0.5 border-fg/50 brightness-110;
+  }
+
+  /* Dark, high-contrast placeholder zone for photos not yet shot. */
+  .photo-zone {
+    background:
+      radial-gradient(120% 80% at 30% 0%, rgba(255, 255, 255, 0.05), transparent 60%),
+      linear-gradient(135deg, #1a1a1a 0%, #101010 100%);
+  }
+}
