@@ -6,6 +6,7 @@ import couchAfter from '../assets/photos/couch-after.webp'
 import pressure from '../assets/photos/pressure-cleaning.webp'
 import tileGrout from '../assets/photos/tile-grout.webp'
 import livingRoom from '../assets/photos/living-room.webp'
+import tileExtraction from '../assets/photos/hero-dario.webp'
 
 // Tiles 1 & 2 are the upholstery before/after pair, kept adjacent so the
 // pairing reads on its own. Tile 6 stays a placeholder until Dario sends a
@@ -16,7 +17,7 @@ const TILES = [
   { img: pressure, caption: 'Pressure cleaning · Canberra' },
   { img: tileGrout, caption: 'Tile & grout · commercial' },
   { img: livingRoom, caption: 'Post-clean walk-through' },
-  { img: null, caption: 'Window cleaning · coming soon' },
+  { img: tileExtraction, caption: 'Tile floor extraction' },
 ]
 
 export default function Gallery() {

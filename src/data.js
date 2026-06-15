@@ -11,9 +11,6 @@ export const BUSINESS = {
 export const tel = `tel:${BUSINESS.phoneRaw}`
 export const mailto = `mailto:${BUSINESS.email}`
 
-// At-a-glance proof points in the hero (the glance; detail lives in "Why").
-export const HERO_TRUST = ['Est. 1993', 'Owner-operated', 'Defence housing']
-
 // Six services Dario actually offers. One sentence each.
 export const SERVICES = [
   { n: '01', title: 'Carpet & upholstery cleaning', line: 'Deep extraction that lifts stains, traffic marks and odour.' },

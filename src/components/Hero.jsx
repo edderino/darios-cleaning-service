@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
-import { tel, HERO_TRUST } from '../data'
+import { tel } from '../data'
 import { Phone, Arrow } from './Icons'
 import Eyebrow from './Eyebrow'
-import heroDario from '../assets/photos/hero-dario.webp'
+import heroImage from '../assets/photos/pressure-cleaning.webp'
 
 const ease = [0.25, 0.1, 0.25, 1]
 const rise = (d = 0) => ({
@@ -13,12 +13,14 @@ const rise = (d = 0) => ({
 
 export default function Hero() {
   return (
-    <section id="top" className="relative min-h-[75vh] w-full overflow-hidden md:min-h-[85vh]">
-      {/* Full-bleed hero: Dario on the job. Positioned to keep him in frame. */}
+    <section id="top" className="relative min-h-[75vh] w-full overflow-hidden bg-bg md:min-h-[85vh]">
+      {/* Hero photo of Dario on the job. He fills the frame top-to-bottom, so:
+          mobile uses cover (positioned to keep him + the surface cleaner), while
+          desktop/tablet uses contain on the dark bg so he's never cropped. */}
       <img
-        src={heroDario}
-        alt="Dario cleaning a tiled commercial floor with his extraction gear"
-        className="absolute inset-0 h-full w-full object-cover object-[50%_34%]"
+        src={heroImage}
+        alt="Dario pressure-cleaning a paved area with his rotary surface cleaner"
+        className="absolute inset-0 h-full w-full object-cover object-[35%_50%] md:object-contain md:object-right"
       />
       {/* Charcoal gradient: opaque bottom-left, fading to transparent top-right */}
       <div className="absolute inset-0 bg-gradient-to-tr from-bg via-bg/85 to-transparent" />
@@ -56,19 +58,6 @@ export default function Hero() {
             <Arrow width={17} height={17} />
           </a>
         </motion.div>
-
-        {/* Trust strip */}
-        <motion.ul
-          {...rise(0.32)}
-          className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted"
-        >
-          {HERO_TRUST.map((t) => (
-            <li key={t} className="flex items-center gap-2.5">
-              <span className="h-1 w-1 rounded-full bg-accent" />
-              {t}
-            </li>
-          ))}
-        </motion.ul>
       </div>
     </section>
   )
