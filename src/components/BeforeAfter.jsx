@@ -7,7 +7,7 @@ import carpetAfter from '../assets/photos/carpet-after.webp'
 
 export default function BeforeAfter() {
   return (
-    <section id="work" className="border-t border-line py-24 md:py-32">
+    <section id="work" className="scroll-mt-20 border-t border-line py-20 md:py-24">
       <div className="wrap">
         <Reveal>
           <Eyebrow>The work</Eyebrow>
@@ -17,7 +17,8 @@ export default function BeforeAfter() {
           <p className="mt-4 max-w-md text-lg text-muted">Drag to compare before and after.</p>
         </Reveal>
 
-        <Reveal delay={0.1} className="mt-12">
+        {/* Centred, compact 4:5 frame so the whole section sits within the viewport. */}
+        <Reveal delay={0.1} className="mx-auto mt-10 max-w-[360px]">
           {/* Real carpet job, split from Dario's single before/after photo. */}
           <BeforeAfterSlider before={carpetBefore} after={carpetAfter} />
         </Reveal>

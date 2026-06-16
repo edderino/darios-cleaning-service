@@ -30,15 +30,15 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="border-t border-line py-24 md:py-32">
+    <section id="contact" className="scroll-mt-20 border-t border-line py-24 md:py-32">
       <div className="wrap grid gap-14 md:grid-cols-12">
         <Reveal className="md:col-span-5">
-          <Eyebrow>Book your clean</Eyebrow>
+          <Eyebrow>Get in touch</Eyebrow>
           <h2 className="mt-4 text-[clamp(1.9rem,4vw,3rem)] font-semibold leading-tight tracking-tighter">
-            Let&rsquo;s sort it.
+            Request your quote.
           </h2>
           <p className="mt-4 max-w-md text-lg leading-relaxed text-muted">
-            Send a few details about the job and Dario will be in touch.
+            Send a few details about the job and we&rsquo;ll be in touch.
           </p>
 
           <div className="mt-10 space-y-4">
@@ -94,7 +94,7 @@ export default function Contact() {
                   placeholder="What needs cleaning?"
                 />
                 <button type="submit" className="btn-accent mt-1 w-full text-[15px] sm:w-auto sm:justify-self-start">
-                  Book my clean
+                  Send request
                   <Arrow width={17} height={17} />
                 </button>
               </motion.form>

@@ -5,13 +5,18 @@ import Eyebrow from './Eyebrow'
 
 export default function Services() {
   return (
-    <section id="services" className="border-t border-line py-24 md:py-32">
+    <section id="services" className="scroll-mt-20 border-t border-line py-24 md:py-32">
       <div className="wrap">
         <Reveal>
           <Eyebrow>Services</Eyebrow>
           <h2 className="mt-4 max-w-2xl text-[clamp(1.9rem,4vw,3rem)] font-semibold leading-tight tracking-tighter">
-            Everything a clean property needs.
+            Specialist cleaning for the jobs regular cleaning can&rsquo;t reach.
           </h2>
+          <p className="mt-5 max-w-[560px] text-lg leading-relaxed text-muted">
+            From carpets and upholstery to windows, grout, pressure cleaning and water
+            damage, we handle the deeper work with the right equipment, experience and
+            care.
+          </p>
         </Reveal>
 
         <div className="mt-14 grid gap-px overflow-hidden rounded-xl2 border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">

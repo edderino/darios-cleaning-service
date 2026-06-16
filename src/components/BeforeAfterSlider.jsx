@@ -46,9 +46,14 @@ export default function BeforeAfterSlider({ before, after, start = 50 }) {
     }
   }, [active, setFromClientX])
 
-  const Panel = ({ src, alt }) =>
+  const Panel = ({ src, alt, position = 'object-center', className = '' }) =>
     src ? (
-      <img src={src} alt={alt} draggable="false" className="h-full w-full object-cover" />
+      <img
+        src={src}
+        alt={alt}
+        draggable="false"
+        className={`h-full w-full object-cover ${position} ${className}`}
+      />
     ) : (
       <div className="photo-zone h-full w-full" />
     )
@@ -67,18 +72,19 @@ export default function BeforeAfterSlider({ before, after, start = 50 }) {
         setActive(true)
         setFromClientX(e.touches[0].clientX)
       }}
-      className="relative aspect-[16/9] w-full select-none overflow-hidden rounded-xl2 border border-line bg-bg"
+      className="relative aspect-[4/5] w-full select-none overflow-hidden rounded-xl2 border border-line bg-bg"
     >
       {/* AFTER — base layer */}
       <div className="absolute inset-0">
-        <Panel src={after} alt="Carpet after cleaning" />
+        <Panel src={after} alt="Carpet after cleaning" position="object-bottom" />
         <span className={`absolute right-4 top-4 ${badge}`}>After</span>
       </div>
 
       {/* BEFORE — clipped overlay */}
       <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
         <div className="h-full" style={{ width: width || '100%' }}>
-          <Panel src={before} alt="Carpet before cleaning" />
+          {/* Before tilted 2° clockwise; slight scale so corners stay covered. */}
+          <Panel src={before} alt="Carpet before cleaning" className="rotate-2 scale-105" />
         </div>
         <span className={`absolute left-4 top-4 ${badge}`}>Before</span>
       </div>

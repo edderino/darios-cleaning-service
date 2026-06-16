@@ -5,13 +5,18 @@ import Eyebrow from './Eyebrow'
 
 export default function Why() {
   return (
-    <section id="why" className="border-t border-line py-24 md:py-32">
+    <section id="why" className="scroll-mt-20 border-t border-line py-24 md:py-32">
       <div className="wrap">
         <Reveal>
           <Eyebrow>Why Dario&rsquo;s</Eyebrow>
           <h2 className="mt-4 max-w-2xl text-[clamp(1.9rem,4vw,3rem)] font-semibold leading-tight tracking-tighter">
-            The part that earns the call.
+            Clear, careful cleaning from quote to finish.
           </h2>
+          <p className="mt-5 max-w-[560px] text-lg leading-relaxed text-muted">
+            We keep the process straightforward: honest advice, proper equipment,
+            careful work and one accountable point of contact from the first call to the
+            final result.
+          </p>
         </Reveal>
 
         <div className="mt-14 grid gap-x-12 gap-y-12 md:grid-cols-2">

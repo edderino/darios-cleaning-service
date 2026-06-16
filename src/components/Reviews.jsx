@@ -6,12 +6,12 @@ import Eyebrow from './Eyebrow'
 
 export default function Reviews() {
   return (
-    <section id="reviews" className="border-t border-line py-24 md:py-32">
+    <section id="reviews" className="scroll-mt-20 border-t border-line py-24 md:py-32">
       <div className="wrap">
         <Reveal>
           <Eyebrow>What locals say</Eyebrow>
           <h2 className="mt-4 max-w-2xl text-[clamp(1.9rem,4vw,3rem)] font-semibold leading-tight tracking-tighter">
-            Three decades of repeat customers.
+            The kind of clean people remember.
           </h2>
         </Reveal>
 
@@ -40,10 +40,6 @@ export default function Reviews() {
             </motion.figure>
           ))}
         </div>
-
-        <Reveal delay={0.1} className="mt-7">
-          <p className="text-sm text-faint">Verified Google reviews — read more on Google.</p>
-        </Reveal>
       </div>
     </section>
   )
