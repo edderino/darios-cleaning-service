@@ -17,7 +17,7 @@ export default function Contact() {
     e.preventDefault()
     // No backend in this build — composes an email to Dario. Wire to a form
     // service (Formspree / Netlify) for production lead capture.
-    const subject = `Quote request — ${form.suburb || 'Canberra'}`
+    const subject = `Quote request: ${form.suburb || 'Canberra'}`
     const body = [
       `Name: ${form.name}`,
       `Phone: ${form.phone}`,

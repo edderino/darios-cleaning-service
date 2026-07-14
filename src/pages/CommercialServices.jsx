@@ -2,6 +2,7 @@ import { BUSINESS, tel, mailto, COMMERCIAL_SERVICES } from '../data'
 import { Phone, Mail } from '../components/Icons'
 import Reveal from '../components/Reveal'
 import Eyebrow from '../components/Eyebrow'
+import ServiceRow from '../components/ServiceRow'
 
 export default function CommercialServices() {
   return (
@@ -21,41 +22,24 @@ export default function CommercialServices() {
             </h1>
             <p className="mt-5 max-w-[560px] text-lg leading-relaxed text-muted">
               Pressure, tile, grout and window cleaning for commercial and managed
-              properties across Canberra and surrounds — scheduled around your hours,
+              properties across Canberra and surrounds, scheduled around your hours,
               not ours.
             </p>
           </Reveal>
         </div>
       </section>
 
-      <section id="commercial-services" className="border-t border-line py-24 md:py-32">
-        <div className="wrap space-y-20 md:space-y-24">
+      <section id="commercial-services" className="border-t border-line py-10 md:py-16">
+        <div className="wrap">
           {COMMERCIAL_SERVICES.map((s, i) => (
-            <Reveal key={s.n} delay={i * 0.05} className="border-t border-line pt-12 first:border-t-0 first:pt-0">
-              <div className="grid gap-x-12 gap-y-6 md:grid-cols-12">
-                <div className="md:col-span-5">
-                  <div className="font-tight text-sm font-medium text-accent">{s.n}</div>
-                  <h2 className="mt-4 text-[clamp(1.5rem,3vw,2.1rem)] font-semibold leading-tight tracking-tight text-fg">
-                    {s.title}
-                  </h2>
-                  <p className="mt-4 max-w-md text-[15px] leading-relaxed text-muted">{s.intro}</p>
-                </div>
-
-                <div className="md:col-span-7">
-                  <p className="label">Serves</p>
-                  <ul className="mt-4 flex flex-wrap gap-2">
-                    {s.serves.map((item) => (
-                      <li
-                        key={item}
-                        className="rounded-full border border-line bg-surface px-3.5 py-1.5 text-[13px] leading-none text-fg/90"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </Reveal>
+            <ServiceRow
+              key={s.n}
+              n={s.n}
+              title={s.title}
+              sentence={s.sentence}
+              details={s.details}
+              delay={i * 0.05}
+            />
           ))}
         </div>
       </section>
@@ -65,12 +49,12 @@ export default function CommercialServices() {
           <Reveal>
             <Eyebrow>Why Dario&rsquo;s</Eyebrow>
             <p className="mt-4 max-w-2xl text-[clamp(1.4rem,2.8vw,1.9rem)] font-semibold leading-snug tracking-tight text-fg">
-              You deal with the same operator start to finish, work is scheduled around
-              your business hours, and every job is completed to a standard you can put
-              in front of your own customers.
+              You deal with the same operator start to finish, we schedule the work
+              around your business hours, and every job finishes to a standard you can
+              put in front of your own customers.
             </p>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
-              Available for one-off cleans or ongoing scheduled maintenance — weekly,
+              Available for one-off cleans or ongoing scheduled maintenance: weekly,
               monthly or as needed.
             </p>
           </Reveal>

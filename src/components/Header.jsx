@@ -4,9 +4,9 @@ import { BUSINESS, tel } from '../data'
 import { Phone } from './Icons'
 
 const NAV = [
-  ['Services', '#services'],
-  ['Work', '#work'],
-  ['Contact', '#contact'],
+  ['Services', '/#services'],
+  ['Work', '/#work'],
+  ['Contact', '/#contact'],
 ]
 
 export default function Header() {
@@ -26,7 +26,7 @@ export default function Header() {
       }`}
     >
       <div className="wrap flex h-16 items-center justify-between md:h-20">
-        <a href="#top" className="leading-none" aria-label={BUSINESS.name}>
+        <Link to="/#top" className="leading-none" aria-label={BUSINESS.name}>
           <span className="font-tight text-[16px] font-semibold tracking-tight text-fg">
             {BUSINESS.wordmarkTop}
             <span className="text-accent">.</span>
@@ -34,17 +34,17 @@ export default function Header() {
           <span className="mt-0.5 block text-[10px] font-medium uppercase tracking-[0.2em] text-faint">
             {BUSINESS.wordmarkSub}
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-9 md:flex">
           {NAV.map(([label, href]) => (
-            <a
+            <Link
               key={href}
-              href={href}
+              to={href}
               className="text-sm text-muted transition-colors hover:text-fg"
             >
               {label}
-            </a>
+            </Link>
           ))}
           <Link to="/residential" className="text-sm text-muted transition-colors hover:text-fg">
             Residential

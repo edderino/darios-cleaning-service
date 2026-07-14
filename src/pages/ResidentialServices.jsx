@@ -1,7 +1,11 @@
+import { Link } from 'react-router-dom'
 import { Arrow } from '../components/Icons'
 import { RESIDENTIAL_SERVICES } from '../data'
 import Reveal from '../components/Reveal'
 import Eyebrow from '../components/Eyebrow'
+import ServiceImage from '../components/ServiceImage'
+import ServiceRow from '../components/ServiceRow'
+import van from '../assets/photos/van.webp'
 
 export default function ResidentialServices() {
   return (
@@ -13,8 +17,8 @@ export default function ResidentialServices() {
       />
 
       <section className="border-t border-transparent pt-32 pb-20 md:pt-44 md:pb-24">
-        <div className="wrap">
-          <Reveal>
+        <div className="wrap grid items-center gap-x-12 gap-y-10 md:grid-cols-12">
+          <Reveal className="md:col-span-7">
             <Eyebrow>Residential Cleaning</Eyebrow>
             <h1 className="mt-4 max-w-2xl text-[clamp(2.2rem,5vw,3.6rem)] font-semibold leading-[1.02] tracking-tighter">
               A deeper clean for your home.
@@ -24,38 +28,24 @@ export default function ResidentialServices() {
               across Canberra and surrounds.
             </p>
           </Reveal>
+
+          <Reveal delay={0.1} className="md:col-span-5">
+            <ServiceImage src={van} alt="Dario's fully equipped cleaning van" />
+          </Reveal>
         </div>
       </section>
 
-      <section id="residential-services" className="border-t border-line py-24 md:py-32">
-        <div className="wrap space-y-20 md:space-y-24">
+      <section id="residential-services" className="border-t border-line py-10 md:py-16">
+        <div className="wrap">
           {RESIDENTIAL_SERVICES.map((s, i) => (
-            <Reveal key={s.n} delay={i * 0.05} className="border-t border-line pt-12 first:border-t-0 first:pt-0">
-              <div className="grid gap-x-12 gap-y-6 md:grid-cols-12">
-                <div className="md:col-span-5">
-                  <div className="font-tight text-sm font-medium text-accent">{s.n}</div>
-                  <h2 className="mt-4 text-[clamp(1.5rem,3vw,2.1rem)] font-semibold leading-tight tracking-tight text-fg">
-                    {s.title}
-                  </h2>
-                  <p className="mt-4 max-w-md text-[15px] leading-relaxed text-muted">{s.intro}</p>
-                </div>
-
-                <div className="md:col-span-7">
-                  <p className="label">Covers</p>
-                  <ul className="mt-4 flex flex-wrap gap-2">
-                    {s.covers.map((item) => (
-                      <li
-                        key={item}
-                        className="rounded-full border border-line bg-surface px-3.5 py-1.5 text-[13px] leading-none text-fg/90"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  {s.note && <p className="mt-4 text-sm text-faint">{s.note}</p>}
-                </div>
-              </div>
-            </Reveal>
+            <ServiceRow
+              key={s.n}
+              n={s.n}
+              title={s.title}
+              sentence={s.sentence}
+              details={s.details}
+              delay={i * 0.05}
+            />
           ))}
         </div>
       </section>
@@ -64,10 +54,10 @@ export default function ResidentialServices() {
         <div className="wrap">
           <Reveal className="flex flex-wrap items-center justify-between gap-6">
             <p className="text-sm text-muted">Servicing Canberra and surrounds.</p>
-            <a href="/#contact" className="btn-accent text-[15px]">
+            <Link to="/#contact" className="btn-accent text-[15px]">
               Get a quote
               <Arrow width={17} height={17} />
-            </a>
+            </Link>
           </Reveal>
         </div>
       </section>

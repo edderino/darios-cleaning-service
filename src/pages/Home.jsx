@@ -11,7 +11,7 @@ export default function Home() {
       <title>Dario's Cleaning Service | Carpet, Pressure & Window Cleaning Canberra</title>
       <meta
         name="description"
-        content="Dario's Cleaning Service — carpet, pressure, window, tile and water-damage cleaning for homes and businesses across Canberra and surrounds. Operating since 1993."
+        content="Dario's Cleaning Service: carpet, pressure, window, tile and water-damage cleaning for homes and businesses across Canberra and surrounds. Operating since 1993."
       />
 
       <Hero />
