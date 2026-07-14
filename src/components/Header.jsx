@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { BUSINESS, tel } from '../data'
 import { Phone } from './Icons'
 
@@ -45,6 +46,12 @@ export default function Header() {
               {label}
             </a>
           ))}
+          <Link to="/residential" className="text-sm text-muted transition-colors hover:text-fg">
+            Residential
+          </Link>
+          <Link to="/commercial" className="text-sm text-muted transition-colors hover:text-fg">
+            Commercial
+          </Link>
         </nav>
 
         <a href={tel} className="btn-accent !px-4 !py-2.5" aria-label={`Call ${BUSINESS.phoneDisplay}`}>

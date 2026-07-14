@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { tel } from '../data'
 import { Phone, Arrow } from './Icons'
 import Eyebrow from './Eyebrow'
@@ -45,14 +46,40 @@ export default function Hero() {
             Professional cleaning across Canberra and surrounds.
           </motion.p>
 
-          <motion.div {...rise(0.24)} className="mt-9 flex flex-wrap items-center gap-3">
+          <motion.div {...rise(0.24)} className="mt-9 grid grid-cols-1 gap-3 sm:max-w-lg sm:grid-cols-2">
+            <Link
+              to="/residential"
+              className="group rounded-xl2 border border-line bg-surface p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-elevated"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-base font-semibold tracking-tight text-fg">Residential</span>
+                <Arrow width={15} height={15} className="text-faint transition-colors group-hover:text-accent" />
+              </div>
+              <p className="mt-1.5 text-sm text-muted">Cleaning for your home</p>
+            </Link>
+            <Link
+              to="/commercial"
+              className="group rounded-xl2 border border-line bg-surface p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-elevated"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-base font-semibold tracking-tight text-fg">Commercial</span>
+                <Arrow width={15} height={15} className="text-faint transition-colors group-hover:text-accent" />
+              </div>
+              <p className="mt-1.5 text-sm text-muted">Cleaning for your business</p>
+            </Link>
+          </motion.div>
+
+          <motion.div {...rise(0.32)} className="mt-6 flex flex-wrap items-center gap-5">
             <a href={tel} className="btn-accent text-[15px]">
               <Phone width={17} height={17} />
               Call
             </a>
-            <a href="#contact" className="btn-outline text-[15px]">
+            <a
+              href="#contact"
+              className="group inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-fg"
+            >
               Get a quote
-              <Arrow width={17} height={17} />
+              <Arrow width={14} height={14} className="transition-transform group-hover:translate-x-0.5" />
             </a>
           </motion.div>
         </div>

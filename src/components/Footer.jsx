@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { BUSINESS, tel, mailto } from '../data'
 
 export default function Footer() {
@@ -22,6 +23,14 @@ export default function Footer() {
           <a href={mailto} className="transition-colors hover:text-fg">
             {BUSINESS.email}
           </a>
+          <span className="text-faint">·</span>
+          <Link to="/residential" className="transition-colors hover:text-fg">
+            Residential
+          </Link>
+          <span className="text-faint">·</span>
+          <Link to="/commercial" className="transition-colors hover:text-fg">
+            Commercial
+          </Link>
         </div>
 
         <p className="text-sm text-faint">

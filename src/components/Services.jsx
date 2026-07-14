@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { SERVICES } from '../data'
+import { Arrow } from './Icons'
 import Reveal from './Reveal'
 import Eyebrow from './Eyebrow'
 
@@ -37,6 +39,23 @@ export default function Services() {
               <p className="mt-2 text-[15px] leading-relaxed text-muted">{s.line}</p>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
+          <Link
+            to="/residential"
+            className="group inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-fg"
+          >
+            See all residential services
+            <Arrow width={14} height={14} className="transition-transform group-hover:translate-x-0.5" />
+          </Link>
+          <Link
+            to="/commercial"
+            className="group inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-fg"
+          >
+            See all commercial services
+            <Arrow width={14} height={14} className="transition-transform group-hover:translate-x-0.5" />
+          </Link>
         </div>
       </div>
     </section>
