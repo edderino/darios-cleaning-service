@@ -76,7 +76,7 @@ export default function BeforeAfterSlider({ before, after, start = 50 }) {
     >
       {/* AFTER — base layer */}
       <div className="absolute inset-0">
-        <Panel src={after} alt="Carpet after cleaning" position="object-bottom" />
+        <Panel src={after} alt="Carpet after professional cleaning, stains removed" position="object-bottom" />
         <span className={`absolute right-4 top-4 ${badge}`}>After</span>
       </div>
 
@@ -84,7 +84,7 @@ export default function BeforeAfterSlider({ before, after, start = 50 }) {
       <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
         <div className="h-full" style={{ width: width || '100%' }}>
           {/* Before tilted 2° clockwise; slight scale so corners stay covered. */}
-          <Panel src={before} alt="Carpet before cleaning" className="rotate-2 scale-105" />
+          <Panel src={before} alt="Stained carpet before professional cleaning" className="rotate-2 scale-105" />
         </div>
         <span className={`absolute left-4 top-4 ${badge}`}>Before</span>
       </div>

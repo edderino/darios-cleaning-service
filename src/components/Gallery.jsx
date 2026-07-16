@@ -6,12 +6,30 @@ import tileGrout from '../assets/photos/tile-grout.webp'
 import livingRoom from '../assets/photos/living-room.webp'
 import tileExtraction from '../assets/photos/hero-dario.webp'
 
-// Four real jobs, clean 2x2. No invented captions or locations.
+// Four real jobs, clean 2x2. No invented captions or locations. `alt` is a
+// fuller description for screen readers/SEO, kept separate from the shorter
+// visible `caption`.
 const TILES = [
-  { img: couchAfter, caption: 'Upholstery' },
-  { img: tileGrout, caption: 'Tile & grout · commercial' },
-  { img: livingRoom, caption: 'Post-clean walk-through' },
-  { img: tileExtraction, caption: 'Tile floor extraction' },
+  {
+    img: couchAfter,
+    caption: 'Upholstery',
+    alt: 'Beige upholstered sofa after professional upholstery cleaning',
+  },
+  {
+    img: tileGrout,
+    caption: 'Tile & grout · commercial',
+    alt: 'Commercial bathroom tile and grout being professionally cleaned',
+  },
+  {
+    img: livingRoom,
+    caption: 'Post-clean walk-through',
+    alt: 'Living room with polished timber floors after a professional clean',
+  },
+  {
+    img: tileExtraction,
+    caption: 'Tile floor extraction',
+    alt: 'Dario operating a tile-cleaning machine in a commercial building foyer',
+  },
 ]
 
 export default function Gallery() {
@@ -35,7 +53,7 @@ export default function Gallery() {
           >
             <img
               src={t.img}
-              alt={t.caption}
+              alt={t.alt}
               loading="lazy"
               className="h-full w-full object-cover object-center brightness-95 transition-[filter] duration-200 group-hover:brightness-110"
             />

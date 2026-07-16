@@ -30,7 +30,7 @@ export default function ResidentialServices() {
           </Reveal>
 
           <Reveal delay={0.1} className="md:col-span-5">
-            <ServiceImage src={van} alt="Dario's fully equipped cleaning van" />
+            <ServiceImage src={van} alt="Dario's fully equipped cleaning van with carpet cleaning equipment ready for a job" />
           </Reveal>
         </div>
       </section>
@@ -43,6 +43,7 @@ export default function ResidentialServices() {
               n={s.n}
               title={s.title}
               sentence={s.sentence}
+              who={s.who}
               details={s.details}
               delay={i * 0.05}
             />

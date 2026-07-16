@@ -5,7 +5,32 @@ import { Arrow } from './Icons'
 import Reveal from './Reveal'
 import Eyebrow from './Eyebrow'
 
+// Rendered by index within its own row-group, so the stagger lines up by
+// column whether it's in the 3-card top row or the 2-card row beneath.
+function ServiceCard(s, i) {
+  return (
+    <motion.div
+      key={s.n}
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.5, delay: (i % 3) * 0.07, ease: [0.25, 0.1, 0.25, 1] }}
+      whileHover={{ y: -4 }}
+      className="group bg-surface p-8 transition-colors duration-300 hover:bg-elevated"
+    >
+      <div className="font-tight text-sm font-medium text-faint transition-colors group-hover:text-accent">
+        {s.n}
+      </div>
+      <h3 className="mt-5 text-lg font-semibold tracking-tight text-fg">{s.title}</h3>
+      <p className="mt-2 text-[15px] leading-relaxed text-muted">{s.line}</p>
+    </motion.div>
+  )
+}
+
 export default function Services() {
+  const primary = SERVICES.slice(0, 3)
+  const secondary = SERVICES.slice(3)
+
   return (
     <section id="services" className="scroll-mt-20 border-t border-line py-24 md:py-32">
       <div className="wrap">
@@ -21,24 +46,12 @@ export default function Services() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-px overflow-hidden rounded-xl2 border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((s, i) => (
-            <motion.div
-              key={s.n}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.5, delay: (i % 3) * 0.07, ease: [0.25, 0.1, 0.25, 1] }}
-              whileHover={{ y: -4 }}
-              className="group bg-surface p-8 transition-colors duration-300 hover:bg-elevated"
-            >
-              <div className="font-tight text-sm font-medium text-faint transition-colors group-hover:text-accent">
-                {s.n}
-              </div>
-              <h3 className="mt-5 text-lg font-semibold tracking-tight text-fg">{s.title}</h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-muted">{s.line}</p>
-            </motion.div>
-          ))}
+        <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-xl2 border border-line bg-line sm:grid-cols-3">
+          {primary.map((s, i) => ServiceCard(s, i))}
+        </div>
+
+        <div className="mt-3 grid grid-cols-1 gap-px overflow-hidden rounded-xl2 border border-line bg-line sm:grid-cols-2 lg:mx-auto lg:max-w-[66.6667%]">
+          {secondary.map((s, i) => ServiceCard(s, i))}
         </div>
 
         <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
@@ -46,14 +59,14 @@ export default function Services() {
             to="/residential"
             className="group inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-fg"
           >
-            See all residential services
+            Residential services
             <Arrow width={14} height={14} className="transition-transform group-hover:translate-x-0.5" />
           </Link>
           <Link
             to="/commercial"
             className="group inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-fg"
           >
-            See all commercial services
+            Commercial services
             <Arrow width={14} height={14} className="transition-transform group-hover:translate-x-0.5" />
           </Link>
         </div>

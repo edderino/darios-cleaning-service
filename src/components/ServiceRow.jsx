@@ -4,8 +4,9 @@ import Reveal from './Reveal'
 import { Arrow } from './Icons'
 
 // Numbered editorial row: big muted index, large service name, one strong
-// sentence. Full specifics sit behind "View details" instead of a pill row.
-export default function ServiceRow({ n, title, sentence, details, delay = 0 }) {
+// sentence, an optional secondary "who it's for" line, and full specifics
+// tucked behind "View details" instead of a pill row.
+export default function ServiceRow({ n, title, sentence, who, details, delay = 0 }) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -18,6 +19,7 @@ export default function ServiceRow({ n, title, sentence, details, delay = 0 }) {
             {title}
           </h2>
           <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">{sentence}</p>
+          {who && <p className="mt-2 max-w-xl text-sm text-faint">{who}</p>}
 
           {details && (
             <>

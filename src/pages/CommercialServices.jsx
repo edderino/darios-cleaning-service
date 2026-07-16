@@ -37,27 +37,11 @@ export default function CommercialServices() {
               n={s.n}
               title={s.title}
               sentence={s.sentence}
+              who={s.who}
               details={s.details}
               delay={i * 0.05}
             />
           ))}
-        </div>
-      </section>
-
-      <section className="border-t border-line py-20 md:py-24">
-        <div className="wrap">
-          <Reveal>
-            <Eyebrow>Why Dario&rsquo;s</Eyebrow>
-            <p className="mt-4 max-w-2xl text-[clamp(1.4rem,2.8vw,1.9rem)] font-semibold leading-snug tracking-tight text-fg">
-              You deal with the same operator start to finish, we schedule the work
-              around your business hours, and every job finishes to a standard you can
-              put in front of your own customers.
-            </p>
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
-              Available for one-off cleans or ongoing scheduled maintenance: weekly,
-              monthly or as needed.
-            </p>
-          </Reveal>
         </div>
       </section>
 
