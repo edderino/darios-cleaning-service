@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Arrow } from '../components/Icons'
-import { RESIDENTIAL_SERVICES } from '../data'
+import { RESIDENTIAL_SERVICES, TEAM } from '../data'
 import Reveal from '../components/Reveal'
 import Eyebrow from '../components/Eyebrow'
 import ServiceImage from '../components/ServiceImage'
@@ -45,6 +45,7 @@ export default function ResidentialServices() {
               sentence={s.sentence}
               who={s.who}
               details={s.details}
+              team={s.team}
               delay={i * 0.05}
             />
           ))}
@@ -54,7 +55,11 @@ export default function ResidentialServices() {
       <section className="border-t border-line py-20 md:py-24">
         <div className="wrap">
           <Reveal className="flex flex-wrap items-center justify-between gap-6">
-            <p className="text-sm text-muted">Servicing Canberra and surrounds.</p>
+            <p className="text-sm text-muted">
+              Servicing Canberra and surrounds. Carpet, pressure, tile, window and
+              water damage go to {TEAM.dario.name} — general cleaning goes to{' '}
+              {TEAM.melissa.name}.
+            </p>
             <Link to="/#contact" className="btn-accent text-[15px]">
               Get a quote
               <Arrow width={17} height={17} />

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BUSINESS, tel } from '../data'
 import { Phone } from './Icons'
+import logo from '../assets/brand/logo.png'
 
 const NAV = [
   ['Services', '/#services'],
@@ -26,13 +27,16 @@ export default function Header() {
       }`}
     >
       <div className="wrap flex h-16 items-center justify-between md:h-20">
-        <Link to="/#top" className="leading-none" aria-label={BUSINESS.name}>
-          <span className="font-tight text-[16px] font-semibold tracking-tight text-fg">
-            {BUSINESS.wordmarkTop}
-            <span className="text-accent">.</span>
-          </span>
-          <span className="mt-0.5 block text-[10px] font-medium uppercase tracking-[0.2em] text-faint">
-            {BUSINESS.wordmarkSub}
+        <Link to="/#top" className="flex items-center gap-2.5 leading-none" aria-label={BUSINESS.name}>
+          <img src={logo} alt="" className="h-9 w-auto" />
+          <span className="hidden sm:block">
+            <span className="font-tight text-[16px] font-semibold tracking-tight text-fg">
+              {BUSINESS.wordmarkTop}
+              <span className="text-accent">.</span>
+            </span>
+            <span className="mt-0.5 block text-[10px] font-medium uppercase tracking-[0.2em] text-faint">
+              {BUSINESS.wordmarkSub}
+            </span>
           </span>
         </Link>
 

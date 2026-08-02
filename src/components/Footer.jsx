@@ -1,41 +1,54 @@
 import { Link } from 'react-router-dom'
-import { BUSINESS, tel, mailto } from '../data'
+import { BUSINESS, TEAM, mailto } from '../data'
+import logo from '../assets/brand/logo.png'
 
 export default function Footer() {
   return (
     <footer className="border-t border-line py-12">
-      <div className="wrap flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
-        <Link to="/#top" className="leading-none" aria-label={BUSINESS.name}>
-          <span className="font-tight text-[16px] font-semibold tracking-tight text-fg">
-            {BUSINESS.wordmarkTop}
-            <span className="text-accent">.</span>
-          </span>
-          <span className="mt-0.5 block text-[10px] font-medium uppercase tracking-[0.2em] text-faint">
-            {BUSINESS.wordmarkSub}
-          </span>
-        </Link>
+      <div className="wrap flex flex-col gap-8">
+        <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
+          <Link to="/#top" className="flex items-center gap-2.5 leading-none" aria-label={BUSINESS.name}>
+            <img src={logo} alt="" className="h-9 w-auto" />
+            <span>
+              <span className="font-tight text-[16px] font-semibold tracking-tight text-fg">
+                {BUSINESS.wordmarkTop}
+                <span className="text-accent">.</span>
+              </span>
+              <span className="mt-0.5 block text-[10px] font-medium uppercase tracking-[0.2em] text-faint">
+                {BUSINESS.wordmarkSub}
+              </span>
+            </span>
+          </Link>
 
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-muted">
-          <a href={tel} className="transition-colors hover:text-fg">
-            {BUSINESS.phoneDisplay}
-          </a>
-          <span className="text-faint">·</span>
-          <a href={mailto} className="transition-colors hover:text-fg">
-            {BUSINESS.email}
-          </a>
-          <span className="text-faint">·</span>
-          <Link to="/residential" className="transition-colors hover:text-fg">
-            Residential
-          </Link>
-          <span className="text-faint">·</span>
-          <Link to="/commercial" className="transition-colors hover:text-fg">
-            Commercial
-          </Link>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-muted">
+            <a href={mailto} className="transition-colors hover:text-fg">
+              {BUSINESS.email}
+            </a>
+            <span className="text-faint">·</span>
+            <Link to="/residential" className="transition-colors hover:text-fg">
+              Residential
+            </Link>
+            <span className="text-faint">·</span>
+            <Link to="/commercial" className="transition-colors hover:text-fg">
+              Commercial
+            </Link>
+          </div>
         </div>
 
-        <p className="text-sm text-faint">
-          © {new Date().getFullYear()} {BUSINESS.name}
-        </p>
+        <div className="flex flex-col items-start justify-between gap-4 border-t border-line pt-6 sm:flex-row sm:items-center">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted">
+            <a href={`tel:${TEAM.dario.phoneRaw}`} className="transition-colors hover:text-fg">
+              {TEAM.dario.name} (carpet, pressure, window, tile & water damage) · {TEAM.dario.phoneDisplay}
+            </a>
+            <a href={`tel:${TEAM.melissa.phoneRaw}`} className="transition-colors hover:text-fg">
+              {TEAM.melissa.name} (general cleaning) · {TEAM.melissa.phoneDisplay}
+            </a>
+          </div>
+
+          <p className="text-sm text-faint">
+            © {new Date().getFullYear()} {BUSINESS.name}
+          </p>
+        </div>
       </div>
     </footer>
   )

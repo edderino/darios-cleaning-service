@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { SERVICES } from '../data'
-import { Arrow } from './Icons'
+import { SERVICES, TEAM } from '../data'
+import { Arrow, Phone } from './Icons'
 import Reveal from './Reveal'
 import Eyebrow from './Eyebrow'
 
@@ -70,6 +70,19 @@ export default function Services() {
             <Arrow width={14} height={14} className="transition-transform group-hover:translate-x-0.5" />
           </Link>
         </div>
+
+        <Reveal delay={0.1} className="mt-14 flex flex-wrap items-center justify-between gap-6 rounded-xl2 border border-line bg-surface p-8">
+          <div>
+            <h3 className="text-lg font-semibold tracking-tight text-fg">Need a regular clean instead?</h3>
+            <p className="mt-2 max-w-md text-[15px] leading-relaxed text-muted">
+              General cleaning for homes and businesses is run separately by {TEAM.melissa.name}.
+            </p>
+          </div>
+          <a href={`tel:${TEAM.melissa.phoneRaw}`} className="btn-outline shrink-0 text-[15px]">
+            <Phone width={17} height={17} />
+            Call {TEAM.melissa.name} · {TEAM.melissa.phoneDisplay}
+          </a>
+        </Reveal>
       </div>
     </section>
   )

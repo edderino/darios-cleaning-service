@@ -2,12 +2,15 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Reveal from './Reveal'
 import { Arrow } from './Icons'
+import { TEAM } from '../data'
 
 // Numbered editorial row: big muted index, large service name, one strong
 // sentence, an optional secondary "who it's for" line, and full specifics
-// tucked behind "View details" instead of a pill row.
-export default function ServiceRow({ n, title, sentence, who, details, delay = 0 }) {
+// tucked behind "View details" instead of a pill row. `team` renders a
+// small tag so it's clear at a glance whether Dario or Melissa handles it.
+export default function ServiceRow({ n, title, sentence, who, details, team, delay = 0 }) {
   const [open, setOpen] = useState(false)
+  const handler = team ? TEAM[team] : null
 
   return (
     <Reveal delay={delay} className="border-t border-line py-14 first:border-t-0 first:pt-0 md:py-20">
@@ -15,9 +18,16 @@ export default function ServiceRow({ n, title, sentence, who, details, delay = 0
         <div className="font-tight text-2xl font-semibold text-faint md:text-4xl">{n}</div>
 
         <div>
-          <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] font-semibold leading-[1.03] tracking-tighter text-fg">
-            {title}
-          </h2>
+          <div className="flex flex-wrap items-center gap-3">
+            <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] font-semibold leading-[1.03] tracking-tighter text-fg">
+              {title}
+            </h2>
+            {handler && (
+              <span className="rounded-full border border-line px-3 py-1 text-xs font-medium uppercase tracking-wide text-faint">
+                Handled by {handler.name}
+              </span>
+            )}
+          </div>
           <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">{sentence}</p>
           {who && <p className="mt-2 max-w-xl text-sm text-faint">{who}</p>}
 
