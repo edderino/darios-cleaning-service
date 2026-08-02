@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom'
-import { Arrow } from '../components/Icons'
-import { RESIDENTIAL_SERVICES, TEAM } from '../data'
+import { BUSINESS, TEAM, mailto, RESIDENTIAL_SERVICES } from '../data'
+import { Phone, Mail } from '../components/Icons'
 import Reveal from '../components/Reveal'
 import Eyebrow from '../components/Eyebrow'
 import ServiceImage from '../components/ServiceImage'
@@ -52,18 +51,42 @@ export default function ResidentialServices() {
         </div>
       </section>
 
-      <section className="border-t border-line py-20 md:py-24">
+      <section id="residential-contact" className="border-t border-line py-24 md:py-32">
         <div className="wrap">
-          <Reveal className="flex flex-wrap items-center justify-between gap-6">
-            <p className="text-sm text-muted">
-              Servicing Canberra and surrounds. {TEAM.dario.name} handles carpet,
-              pressure, tile, window and water damage work, and {TEAM.melissa.name}
-              handles general cleaning.
+          <Reveal className="max-w-lg">
+            <Eyebrow>Get in touch</Eyebrow>
+            <h2 className="mt-4 text-[clamp(1.9rem,4vw,3rem)] font-semibold leading-tight tracking-tighter">
+              Talk to us about your home.
+            </h2>
+            <p className="mt-4 max-w-md text-lg leading-relaxed text-muted">
+              Carpet, pressure, tile, window and water damage work goes to Dario.
+              General cleaning goes to Melissa. Call whichever fits, or email and
+              we&rsquo;ll point you the right way.
             </p>
-            <Link to="/#contact" className="btn-accent text-[15px]">
-              Get a quote
-              <Arrow width={17} height={17} />
-            </Link>
+
+            <div className="mt-10 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-xl2 border border-line bg-surface p-5">
+                <p className="text-sm font-medium text-fg">{TEAM.dario.name}</p>
+                <p className="mt-1 text-sm text-faint">{TEAM.dario.role}</p>
+                <a href={`tel:${TEAM.dario.phoneRaw}`} className="mt-4 inline-flex items-center gap-2 text-[15px] text-fg transition-colors hover:text-accent">
+                  <Phone width={16} height={16} className="text-accent" />
+                  {TEAM.dario.phoneDisplay}
+                </a>
+              </div>
+              <div className="rounded-xl2 border border-line bg-surface p-5">
+                <p className="text-sm font-medium text-fg">{TEAM.melissa.name}</p>
+                <p className="mt-1 text-sm text-faint">{TEAM.melissa.role}</p>
+                <a href={`tel:${TEAM.melissa.phoneRaw}`} className="mt-4 inline-flex items-center gap-2 text-[15px] text-fg transition-colors hover:text-accent">
+                  <Phone width={16} height={16} className="text-accent" />
+                  {TEAM.melissa.phoneDisplay}
+                </a>
+              </div>
+            </div>
+
+            <a href={mailto} className="btn-outline mt-6 text-[15px]">
+              <Mail width={17} height={17} />
+              {BUSINESS.email}
+            </a>
           </Reveal>
         </div>
       </section>
