@@ -1,7 +1,5 @@
 export const BUSINESS = {
   name: "Dario's Cleaning Service",
-  wordmarkTop: "Dario's",
-  wordmarkSub: 'Cleaning Service',
   tagline: "Dirt's Final Destination",
   phoneRaw: '0417476017',
   phoneDisplay: '0417 476 017',
@@ -23,7 +21,7 @@ export const TEAM = {
   },
   melissa: {
     name: 'Melissa',
-    role: 'General cleaning — domestic & commercial',
+    role: 'General house and office cleaning',
     phoneRaw: '0410579725',
     phoneDisplay: '0410 579 725',
   },

@@ -30,7 +30,7 @@ export default function CommercialServices() {
           </Reveal>
 
           <Reveal delay={0.1} className="md:col-span-5">
-            <ServiceImage src={van} alt="Dario's fully liveried commercial cleaning van" />
+            <ServiceImage src={van} alt="Dario's fully liveried commercial cleaning van" aspect="aspect-[16/9]" />
           </Reveal>
         </div>
       </section>

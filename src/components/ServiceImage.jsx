@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 // Same dark rounded frame, border, object-cover and hover lift as the
 // homepage Gallery tiles. Renders a labelled placeholder when no photo
 // exists yet, instead of reusing an unrelated shot.
-export default function ServiceImage({ src, alt, placeholder = 'Photo coming soon', className = '' }) {
+export default function ServiceImage({ src, alt, placeholder = 'Photo coming soon', aspect = 'aspect-[4/3]', className = '' }) {
   return (
     <motion.figure
       initial={{ opacity: 0, y: 16 }}
@@ -11,7 +11,7 @@ export default function ServiceImage({ src, alt, placeholder = 'Photo coming soo
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
       whileHover={{ y: -3 }}
-      className={`group relative aspect-[4/3] overflow-hidden rounded-xl2 border border-line bg-bg ${className}`}
+      className={`group relative ${aspect} overflow-hidden rounded-xl2 border border-line bg-bg ${className}`}
     >
       {src ? (
         <img

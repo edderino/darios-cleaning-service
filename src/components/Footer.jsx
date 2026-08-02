@@ -7,17 +7,8 @@ export default function Footer() {
     <footer className="border-t border-line py-12">
       <div className="wrap flex flex-col gap-8">
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
-          <Link to="/#top" className="flex items-center gap-2.5 leading-none" aria-label={BUSINESS.name}>
-            <img src={logo} alt="" className="h-9 w-auto" />
-            <span>
-              <span className="font-tight text-[16px] font-semibold tracking-tight text-fg">
-                {BUSINESS.wordmarkTop}
-                <span className="text-accent">.</span>
-              </span>
-              <span className="mt-0.5 block text-[10px] font-medium uppercase tracking-[0.2em] text-faint">
-                {BUSINESS.wordmarkSub}
-              </span>
-            </span>
+          <Link to="/#top" className="leading-none" aria-label={BUSINESS.name}>
+            <img src={logo} alt={BUSINESS.name} className="h-11 w-auto" />
           </Link>
 
           <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-muted">

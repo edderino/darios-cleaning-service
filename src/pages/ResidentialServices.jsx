@@ -56,9 +56,9 @@ export default function ResidentialServices() {
         <div className="wrap">
           <Reveal className="flex flex-wrap items-center justify-between gap-6">
             <p className="text-sm text-muted">
-              Servicing Canberra and surrounds. Carpet, pressure, tile, window and
-              water damage go to {TEAM.dario.name} — general cleaning goes to{' '}
-              {TEAM.melissa.name}.
+              Servicing Canberra and surrounds. {TEAM.dario.name} handles carpet,
+              pressure, tile, window and water damage work, and {TEAM.melissa.name}
+              handles general cleaning.
             </p>
             <Link to="/#contact" className="btn-accent text-[15px]">
               Get a quote
