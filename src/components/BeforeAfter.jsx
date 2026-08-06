@@ -39,8 +39,8 @@ export default function BeforeAfter() {
               after={carpetLivingRoomAfter}
               beforeAlt="Stained living room carpet before professional cleaning"
               afterAlt="Living room carpet after professional cleaning"
-              afterPosition="object-top"
-              afterClassName="scale-125"
+              afterPosition="object-[20%_25%]"
+              afterClassName="scale-[2]"
             />
           </Reveal>
         </div>
