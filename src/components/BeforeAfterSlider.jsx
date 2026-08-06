@@ -12,6 +12,8 @@ export default function BeforeAfterSlider({
   after,
   beforeAlt = 'Before professional cleaning',
   afterAlt = 'After professional cleaning',
+  afterPosition = 'object-bottom',
+  afterClassName = '',
   start = 50,
 }) {
   const [pos, setPos] = useState(start)
@@ -82,7 +84,7 @@ export default function BeforeAfterSlider({
     >
       {/* AFTER — base layer */}
       <div className="absolute inset-0">
-        <Panel src={after} alt={afterAlt} position="object-bottom" />
+        <Panel src={after} alt={afterAlt} position={afterPosition} className={afterClassName} />
         <span className={`absolute right-4 top-4 ${badge}`}>After</span>
       </div>
 
