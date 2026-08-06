@@ -37,7 +37,7 @@ export default function Footer() {
           </div>
 
           <p className="text-sm text-faint">
-            © {new Date().getFullYear()} {BUSINESS.name}
+            {BUSINESS.hours} · © {new Date().getFullYear()} {BUSINESS.name}
           </p>
         </div>
       </div>

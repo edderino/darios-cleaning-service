@@ -45,6 +45,9 @@ export default function ResidentialServices() {
               who={s.who}
               details={s.details}
               team={s.team}
+              image={s.image}
+              imageAlt={s.imageAlt}
+              imagePosition={s.imagePosition}
               delay={i * 0.05}
             />
           ))}
