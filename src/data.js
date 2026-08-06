@@ -16,6 +16,10 @@ export const BUSINESS = {
   phoneDisplay: '0417 476 017',
   email: 'dariogaz@outlook.com',
   hours: 'Open Monday to Friday',
+  // TODO: swap for the direct Google Business "write a review" link once
+  // Dario supplies it — this is a plain, stable Google search in the
+  // meantime, not a session-bound URL.
+  reviewUrl: 'https://www.google.com/search?q=darios+carpet+cleaning',
 }
 
 export const tel = `tel:${BUSINESS.phoneRaw}`

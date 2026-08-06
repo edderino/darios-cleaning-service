@@ -23,6 +23,15 @@ export default function Footer() {
             <Link to="/commercial" className="transition-colors hover:text-fg">
               Commercial
             </Link>
+            <span className="text-faint">·</span>
+            <a
+              href={BUSINESS.reviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-fg"
+            >
+              Leave a review
+            </a>
           </div>
         </div>
 
