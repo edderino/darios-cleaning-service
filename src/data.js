@@ -14,7 +14,7 @@ export const BUSINESS = {
   tagline: "Dirt's Final Destination",
   phoneRaw: '0417476017',
   phoneDisplay: '0417 476 017',
-  email: 'dariogaz@outlook.com',
+  email: 'dario.melissa@outlook.com',
   hours: 'Open Monday to Friday',
   // TODO: swap for the direct Google Business "write a review" link once
   // Dario supplies it — this is a plain, stable Google search in the
