@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { REVIEWS } from '../data'
-import { Star } from './Icons'
+import { BUSINESS, REVIEWS } from '../data'
+import { Arrow, Star } from './Icons'
 import Reveal from './Reveal'
 import Eyebrow from './Eyebrow'
 
@@ -40,6 +40,23 @@ export default function Reviews() {
             </motion.figure>
           ))}
         </div>
+
+        <Reveal>
+          <div className="mt-14 flex flex-col items-start gap-4 border-t border-line pt-10 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm text-muted">
+              Worked with us before? A quick review helps other Canberra locals find us.
+            </p>
+            <a
+              href={BUSINESS.reviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline shrink-0 text-[15px]"
+            >
+              Leave a review
+              <Arrow width={17} height={17} />
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   )

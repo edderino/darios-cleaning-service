@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { BUSINESS, TEAM, mailto } from '../data'
 import logo from '../assets/brand/logo.png'
+import { Star } from './Icons'
 
 export default function Footer() {
   return (
@@ -11,7 +12,7 @@ export default function Footer() {
             <img src={logo} alt={BUSINESS.name} className="h-11 w-auto" />
           </Link>
 
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-muted">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-muted">
             <a href={mailto} className="transition-colors hover:text-fg">
               {BUSINESS.email}
             </a>
@@ -23,13 +24,13 @@ export default function Footer() {
             <Link to="/commercial" className="transition-colors hover:text-fg">
               Commercial
             </Link>
-            <span className="text-faint">·</span>
             <a
               href={BUSINESS.reviewUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-fg"
+              className="inline-flex items-center gap-1.5 rounded-full border border-accent/40 px-3.5 py-1.5 text-accent transition-colors hover:border-accent hover:bg-accent/10"
             >
+              <Star width={13} height={13} />
               Leave a review
             </a>
           </div>
