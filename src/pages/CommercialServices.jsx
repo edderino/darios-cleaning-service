@@ -14,6 +14,47 @@ export default function CommercialServices() {
         name="description"
         content="Commercial pressure, tile & grout and window cleaning for offices, retail, education and strata properties across Canberra and surrounds. Scheduled around your business hours."
       />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href="https://www.darioscleaning.com.au/commercial" />
+
+      <meta property="og:site_name" content="Dario's Cleaning Service" />
+      <meta property="og:url" content="https://www.darioscleaning.com.au/commercial" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Commercial Cleaning Canberra | Offices, Retail & Strata | Dario's" />
+      <meta
+        property="og:description"
+        content="Commercial pressure, tile & grout and window cleaning for offices, retail, education and strata properties across Canberra and surrounds. Scheduled around your business hours."
+      />
+      <meta property="og:image" content="https://www.darioscleaning.com.au/social-share.webp" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Commercial Cleaning Canberra | Offices, Retail & Strata | Dario's" />
+      <meta
+        name="twitter:description"
+        content="Commercial pressure, tile & grout and window cleaning for offices, retail, education and strata properties across Canberra and surrounds. Scheduled around your business hours."
+      />
+      <meta name="twitter:image" content="https://www.darioscleaning.com.au/social-share.webp" />
+
+      <script type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Home',
+              item: 'https://www.darioscleaning.com.au/',
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Commercial Cleaning',
+              item: 'https://www.darioscleaning.com.au/commercial',
+            },
+          ],
+        })}
+      </script>
 
       <section className="border-t border-transparent pt-32 pb-20 md:pt-44 md:pb-24">
         <div className="wrap grid items-center gap-x-12 gap-y-10 md:grid-cols-12">

@@ -14,6 +14,47 @@ export default function ResidentialServices() {
         name="description"
         content="Carpet & upholstery, high-pressure, tile & grout and window cleaning for homes across Canberra and surrounds."
       />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href="https://www.darioscleaning.com.au/residential" />
+
+      <meta property="og:site_name" content="Dario's Cleaning Service" />
+      <meta property="og:url" content="https://www.darioscleaning.com.au/residential" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Residential Cleaning Canberra | Carpet, Tile & Window Cleaning | Dario's" />
+      <meta
+        property="og:description"
+        content="Carpet & upholstery, high-pressure, tile & grout and window cleaning for homes across Canberra and surrounds."
+      />
+      <meta property="og:image" content="https://www.darioscleaning.com.au/social-share.webp" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Residential Cleaning Canberra | Carpet, Tile & Window Cleaning | Dario's" />
+      <meta
+        name="twitter:description"
+        content="Carpet & upholstery, high-pressure, tile & grout and window cleaning for homes across Canberra and surrounds."
+      />
+      <meta name="twitter:image" content="https://www.darioscleaning.com.au/social-share.webp" />
+
+      <script type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Home',
+              item: 'https://www.darioscleaning.com.au/',
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Residential Cleaning',
+              item: 'https://www.darioscleaning.com.au/residential',
+            },
+          ],
+        })}
+      </script>
 
       <section className="border-t border-transparent pt-32 pb-20 md:pt-44 md:pb-24">
         <div className="wrap grid items-center gap-x-12 gap-y-10 md:grid-cols-12">

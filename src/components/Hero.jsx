@@ -22,6 +22,10 @@ export default function Hero() {
         src={heroImage}
         alt="Dario pressure cleaning a paved outdoor area in Canberra with a rotary surface cleaner"
         className="block w-full"
+        width={1360}
+        height={1020}
+        loading="eager"
+        fetchPriority="high"
       />
       {/* Desktop: gradient overlay on the photo for text legibility. */}
       <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-bg via-bg/55 to-transparent md:block" />
@@ -30,17 +34,17 @@ export default function Hero() {
       <div className="relative md:absolute md:inset-0 md:flex md:items-center">
         <div className="wrap py-10 md:py-0">
           <motion.div {...rise(0)}>
-            <Eyebrow>Dario&rsquo;s Cleaning Service · Established 1993 · Canberra</Eyebrow>
+            <Eyebrow as="h1">Dario&rsquo;s Cleaning Service · Established 1993 · Canberra</Eyebrow>
           </motion.div>
 
-          <motion.h1
+          <motion.p
             {...rise(0.08)}
             className="mt-6 text-[clamp(2.6rem,6vw,5rem)] font-semibold leading-[0.96] tracking-tighter"
           >
             Dirt&rsquo;s final
             <br />
             <span className="text-accent">destination.</span>
-          </motion.h1>
+          </motion.p>
 
           <motion.p {...rise(0.16)} className="mt-7 max-w-md text-lg leading-relaxed text-muted">
             Professional cleaning across Canberra and surrounds.
