@@ -6,6 +6,7 @@ import ScrollToHash from './components/ScrollToHash'
 import Home from './pages/Home'
 import ResidentialServices from './pages/ResidentialServices'
 import CommercialServices from './pages/CommercialServices'
+import NotFound from './pages/NotFound'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/residential" element={<ResidentialServices />} />
           <Route path="/commercial" element={<CommercialServices />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
