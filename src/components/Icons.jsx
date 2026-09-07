@@ -33,3 +33,15 @@ export const Star = (p) => (
     <path d="M12 2.5l2.9 5.9 6.6 1-4.8 4.6 1.1 6.5L12 18l-5.8 3 1.1-6.5L2.5 9.4l6.6-1L12 2.5z" />
   </svg>
 )
+
+export const Menu = (p) => (
+  <svg {...base} {...p}>
+    <path d="M4 7h16M4 12h16M4 17h16" />
+  </svg>
+)
+
+export const Close = (p) => (
+  <svg {...base} {...p}>
+    <path d="M6 6l12 12M18 6 6 18" />
+  </svg>
+)
