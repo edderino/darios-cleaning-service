@@ -112,13 +112,53 @@ export default function Contact() {
                 key="done"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="flex h-full min-h-[18rem] flex-col items-start justify-center rounded-xl2 border border-line bg-surface p-8"
+                role="status"
+                className="flex h-full min-h-[18rem] flex-col items-center justify-center rounded-xl2 border border-line bg-surface p-8 text-center"
               >
-                <h3 className="text-2xl font-semibold tracking-tight">Thanks.</h3>
-                <p className="mt-3 max-w-sm text-muted">
-                  Your request is on its way. For anything urgent, call{' '}
-                  {TEAM.dario.phoneDisplay}.
-                </p>
+                <svg
+                  viewBox="0 0 100 100"
+                  width="96"
+                  height="96"
+                  fill="none"
+                  stroke="#E8703A"
+                  strokeWidth="5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <motion.circle
+                    cx="50"
+                    cy="50"
+                    r="44"
+                    initial={{ pathLength: 0, rotate: -90 }}
+                    animate={{ pathLength: 1, rotate: -90 }}
+                    transition={{ duration: 0.7, ease: 'easeInOut' }}
+                    style={{ transformOrigin: '50% 50%' }}
+                  />
+                  <motion.path
+                    d="M30 52 L44 66 L71 36"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 0.45, delay: 0.65, ease: 'easeOut' }}
+                  />
+                </svg>
+                <motion.h3
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.0, duration: 0.4 }}
+                  className="mt-6 text-2xl font-semibold tracking-tight"
+                >
+                  Thanks for reaching out!
+                </motion.h3>
+                <motion.p
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.15, duration: 0.4 }}
+                  className="mt-3 max-w-sm text-muted"
+                >
+                  Your request is on its way and we&rsquo;ll be in touch soon. For anything urgent,
+                  call {TEAM.dario.phoneDisplay}.
+                </motion.p>
               </motion.div>
             ) : (
               <motion.form
