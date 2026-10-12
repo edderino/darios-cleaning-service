@@ -14,7 +14,9 @@ const field =
 const CONTACT_API_URL = import.meta.env.VITE_CONTACT_API_URL || '/api/contact'
 const CLIENT_ID = 'darios-cleaning'
 
-const empty = { name: '', phone: '', suburb: '', detail: '', company: '' }
+const empty = { firstName: '', lastName: '', phone: '', email: '', suburb: '', detail: '', company: '' }
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export default function Contact() {
   const [form, setForm] = useState(empty)
@@ -22,7 +24,12 @@ export default function Contact() {
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }))
 
   const isValid =
-    form.name.trim().length > 0 && form.phone.trim().length >= 6 && form.detail.trim().length > 0
+    form.firstName.trim().length > 0 &&
+    form.lastName.trim().length > 0 &&
+    form.phone.trim().length >= 6 &&
+    EMAIL_RE.test(form.email.trim()) &&
+    form.suburb.trim().length > 0 &&
+    form.detail.trim().length > 0
 
   const onSubmit = async (e) => {
     e.preventDefault()
@@ -41,8 +48,10 @@ export default function Contact() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           clientId: CLIENT_ID,
-          name: form.name.trim(),
+          firstName: form.firstName.trim(),
+          lastName: form.lastName.trim(),
           phone: form.phone.trim(),
+          email: form.email.trim(),
           suburb: form.suburb.trim(),
           message: form.detail.trim(),
           pageUrl: window.location.href,
@@ -123,31 +132,60 @@ export default function Contact() {
                 <div className="grid gap-4 sm:grid-cols-2">
                   <input
                     required
-                    minLength={2}
-                    maxLength={100}
-                    value={form.name}
-                    onChange={set('name')}
+                    maxLength={50}
+                    autoComplete="given-name"
+                    value={form.firstName}
+                    onChange={set('firstName')}
                     className={field}
-                    placeholder="Name"
+                    placeholder="First name *"
+                    aria-label="First name"
                   />
                   <input
                     required
+                    maxLength={50}
+                    autoComplete="family-name"
+                    value={form.lastName}
+                    onChange={set('lastName')}
+                    className={field}
+                    placeholder="Last name *"
+                    aria-label="Last name"
+                  />
+                </div>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <input
+                    required
                     type="tel"
+                    autoComplete="tel"
                     pattern="[0-9+()\-\s]{6,}"
                     minLength={6}
                     maxLength={30}
                     value={form.phone}
                     onChange={set('phone')}
                     className={field}
-                    placeholder="Phone"
+                    placeholder="Contact number *"
+                    aria-label="Contact number"
+                  />
+                  <input
+                    required
+                    type="email"
+                    autoComplete="email"
+                    maxLength={150}
+                    value={form.email}
+                    onChange={set('email')}
+                    className={field}
+                    placeholder="Email *"
+                    aria-label="Email"
                   />
                 </div>
                 <input
+                  required
                   maxLength={100}
+                  autoComplete="address-level2"
                   value={form.suburb}
                   onChange={set('suburb')}
                   className={field}
-                  placeholder="Suburb"
+                  placeholder="Suburb *"
+                  aria-label="Suburb"
                 />
                 <textarea
                   required
@@ -156,7 +194,8 @@ export default function Contact() {
                   value={form.detail}
                   onChange={set('detail')}
                   className={`${field} resize-none`}
-                  placeholder="What needs cleaning?"
+                  placeholder="What needs cleaning? *"
+                  aria-label="What needs cleaning?"
                 />
                 {/* Honeypot — kept off-screen, not display:none, so bots that skip
                     hidden fields still fill it in. */}

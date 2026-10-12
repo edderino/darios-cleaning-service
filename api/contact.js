@@ -1,7 +1,7 @@
 // Vercel serverless function — receives contact-form submissions and sends
 // them on via Mailgun. Mailgun credentials never reach the client; only this
 // function talks to Mailgun. Frontend contract (kept stable regardless of
-// provider): POST { clientId, name, phone, suburb, message, pageUrl } ->
+// provider): POST { clientId, firstName, lastName, phone, email, suburb, message, pageUrl } ->
 // { success: true } | { success: false, error: string }.
 
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000
@@ -41,7 +41,7 @@ export default async function handler(req, res) {
   }
 
   const body = req.body && typeof req.body === 'object' ? req.body : {}
-  const { clientId, name, phone, suburb, message, pageUrl, company } = body
+  const { clientId, firstName, lastName, phone, email, suburb, message, pageUrl, company } = body
 
   // Honeypot: real visitors never fill this in. Silently succeed so bots
   // don't learn anything from the response.
@@ -53,14 +53,19 @@ export default async function handler(req, res) {
     return res.status(400).json({ success: false, error: 'Unknown client' })
   }
 
-  const cleanName = clean(name, 100)
+  const cleanFirst = clean(firstName, 50)
+  const cleanLast = clean(lastName, 50)
+  const cleanEmail = clean(email, 150)
   const cleanPhone = clean(phone, 30)
   const cleanSuburb = clean(suburb, 100)
   const cleanMessage = clean(message, 2000)
   const cleanPageUrl = clean(pageUrl, 300)
 
-  if (!cleanName || !cleanPhone || !cleanMessage) {
+  if (!cleanFirst || !cleanLast || !cleanPhone || !cleanEmail || !cleanSuburb || !cleanMessage) {
     return res.status(400).json({ success: false, error: 'Missing required fields' })
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanEmail)) {
+    return res.status(400).json({ success: false, error: 'Invalid email address' })
   }
 
   const { MAILGUN_API_KEY, MAILGUN_DOMAIN, MAILGUN_TO, MAILGUN_FROM } = process.env
@@ -69,10 +74,11 @@ export default async function handler(req, res) {
     return res.status(500).json({ success: false, error: 'Contact form is not configured' })
   }
 
-  const subject = `Quote request: ${cleanSuburb || 'Canberra'}`
+  const subject = `Quote request: ${cleanSuburb}`
   const text = [
-    `Name: ${cleanName}`,
+    `Name: ${cleanFirst} ${cleanLast}`,
     `Phone: ${cleanPhone}`,
+    `Email: ${cleanEmail}`,
     `Suburb: ${cleanSuburb}`,
     `Page: ${cleanPageUrl}`,
     '',
@@ -82,6 +88,7 @@ export default async function handler(req, res) {
   const form = new URLSearchParams({
     from: MAILGUN_FROM,
     to: MAILGUN_TO,
+    'h:Reply-To': cleanEmail,
     subject,
     text,
   })
