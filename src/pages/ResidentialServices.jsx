@@ -1,5 +1,6 @@
 import { BUSINESS, TEAM, mailto, RESIDENTIAL_SERVICES } from '../data'
-import { Phone, Mail } from '../components/Icons'
+import { Link } from 'react-router-dom'
+import { Phone, Mail, Arrow } from '../components/Icons'
 import Reveal from '../components/Reveal'
 import Eyebrow from '../components/Eyebrow'
 import ServiceImage from '../components/ServiceImage'
@@ -67,6 +68,13 @@ export default function ResidentialServices() {
               Carpet, upholstery, pressure, tile, grout and window cleaning for homes
               across Canberra and surrounds.
             </p>
+            <Link
+              to="/carpet-cleaning-canberra"
+              className="group mt-6 inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-fg"
+            >
+              More on carpet &amp; upholstery cleaning
+              <Arrow width={14} height={14} className="transition-transform group-hover:translate-x-0.5" />
+            </Link>
           </Reveal>
 
           <Reveal delay={0.1} className="md:col-span-5">

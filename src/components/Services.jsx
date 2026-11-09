@@ -56,6 +56,13 @@ export default function Services() {
 
         <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
           <Link
+            to="/carpet-cleaning-canberra"
+            className="group inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-fg"
+          >
+            Carpet &amp; upholstery cleaning
+            <Arrow width={14} height={14} className="transition-transform group-hover:translate-x-0.5" />
+          </Link>
+          <Link
             to="/residential"
             className="group inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-fg"
           >

@@ -11,6 +11,7 @@ const NAV = [
 ]
 
 const PAGES = [
+  ['Carpet Cleaning', '/carpet-cleaning-canberra'],
   ['Residential', '/residential'],
   ['Commercial', '/commercial'],
 ]

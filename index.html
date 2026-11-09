@@ -7,28 +7,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://www.darioscleaning.com.au/" />
-    <meta
-      name="description"
-      content="Dario's Cleaning Service: carpet, pressure, window, tile and water-damage cleaning for homes and businesses across Canberra and surrounds. Operating since 1993."
-    />
-    <meta property="og:site_name" content="Dario's Cleaning Service" />
-    <meta property="og:url" content="https://www.darioscleaning.com.au/" />
-    <meta property="og:title" content="Dario's Cleaning Service | Carpet, Pressure & Window Cleaning Canberra" />
-    <meta
-      property="og:description"
-      content="Dario's Cleaning Service: carpet, pressure, window, tile and water-damage cleaning for homes and businesses across Canberra and surrounds. Operating since 1993."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://www.darioscleaning.com.au/social-share.webp" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Dario's Cleaning Service | Carpet, Pressure & Window Cleaning Canberra" />
-    <meta
-      name="twitter:description"
-      content="Dario's Cleaning Service: carpet, pressure, window, tile and water-damage cleaning for homes and businesses across Canberra and surrounds. Operating since 1993."
-    />
-    <meta name="twitter:image" content="https://www.darioscleaning.com.au/social-share.webp" />
+    <!--app-head-->
     <meta name="theme-color" content="#0D0D0D" />
 
     <!-- Clean modern sans: Inter + Inter Tight (headlines) -->
@@ -39,7 +18,6 @@
       rel="stylesheet"
     />
 
-    <title>Dario's Cleaning Service | Carpet, Pressure & Window Cleaning Canberra</title>
 
     <script type="application/ld+json">
       {
@@ -47,6 +25,7 @@
         "@type": "CleaningService",
         "@id": "https://www.darioscleaning.com.au/#business",
         "name": "Dario's Cleaning Service",
+        "alternateName": "Dario's Carpet Cleaning",
         "url": "https://www.darioscleaning.com.au/",
         "image": "https://www.darioscleaning.com.au/social-share.webp",
         "logo": "https://www.darioscleaning.com.au/logo.png",
@@ -54,18 +33,29 @@
         "email": "dario.melissa@outlook.com",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Canberra",
+          "addressLocality": "Evatt",
           "addressRegion": "ACT",
+          "postalCode": "2617",
           "addressCountry": "AU"
         },
-        "areaServed": ["Canberra and surrounds", "Canberra, ACT"],
+        "areaServed": [
+          { "@type": "City", "name": "Canberra" },
+          { "@type": "Place", "name": "Belconnen" },
+          { "@type": "Place", "name": "Gungahlin" },
+          { "@type": "Place", "name": "Inner North Canberra" },
+          { "@type": "Place", "name": "Inner South Canberra" },
+          { "@type": "Place", "name": "Woden Valley" },
+          { "@type": "Place", "name": "Weston Creek" },
+          { "@type": "Place", "name": "Molonglo Valley" },
+          { "@type": "Place", "name": "Tuggeranong" }
+        ],
         "description": "Carpet, pressure, window, tile and water-damage cleaning for homes and businesses across Canberra and surrounds. Operating since 1993.",
         "foundingDate": "1993"
       }
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

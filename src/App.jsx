@@ -6,6 +6,7 @@ import ScrollToHash from './components/ScrollToHash'
 import Home from './pages/Home'
 import ResidentialServices from './pages/ResidentialServices'
 import CommercialServices from './pages/CommercialServices'
+import CarpetCleaning from './pages/CarpetCleaning'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/residential" element={<ResidentialServices />} />
           <Route path="/commercial" element={<CommercialServices />} />
+          <Route path="/carpet-cleaning-canberra" element={<CarpetCleaning />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

@@ -279,3 +279,90 @@ export const REVIEWS = [
     service: 'Carpet & window cleaning',
   },
 ]
+
+// /carpet-cleaning-canberra. Everything here restates what Dario's own
+// service docs already say elsewhere on the site (RESIDENTIAL_SERVICES /
+// COMMERCIAL_SERVICES). No drying times, prices or guarantees are stated
+// because none have been confirmed. Answers point to the quote instead.
+export const CARPET = {
+  covers: [
+    {
+      title: 'Carpet cleaning',
+      line: 'Deep extraction lifts stains, traffic marks and odour from bedrooms, living areas, hallways and stairs.',
+    },
+    {
+      title: 'Rug cleaning',
+      line: 'Rugs cleaned with the same deep extraction as wall-to-wall carpet.',
+    },
+    {
+      title: 'Upholstery & lounges',
+      line: 'Lounges, recliners, armchairs, dining chairs and ottomans brought back from marked and tired.',
+    },
+    {
+      title: 'Mattresses',
+      line: 'Mattresses cleaned to lift marks and freshen the surface.',
+    },
+    {
+      title: 'End-of-lease carpet',
+      line: 'Carpet cleaning for rentals and end-of-lease cleans, so the carpets are ready for the inspection.',
+    },
+    {
+      title: 'Commercial carpet',
+      line: 'Offices, community facilities, education spaces, strata common areas and other high-use carpet.',
+    },
+  ],
+  steps: [
+    {
+      head: 'Call or send the form',
+      body: 'Tell Dario which rooms or pieces need doing and what the problem is: stains, traffic marks, odour or an end-of-lease clean.',
+    },
+    {
+      head: 'Get a quote',
+      body: 'Every job is quoted on the rooms, size and condition of the carpet, so you know the price before any work starts.',
+    },
+    {
+      head: 'The clean',
+      body: 'Dario assesses the carpet, treats marks and stains, and deep-cleans with extraction equipment suited to the job.',
+    },
+    {
+      head: 'Drying and walk-through',
+      body: 'Drying time depends on the carpet, the weather and airflow in the room. Dario will tell you what to expect for your job.',
+    },
+  ],
+  areas: [
+    'Belconnen',
+    'Gungahlin',
+    'Inner North',
+    'Inner South',
+    'Woden Valley',
+    'Weston Creek',
+    'Molonglo Valley',
+    'Tuggeranong',
+  ],
+  faqs: [
+    {
+      q: 'Is this steam cleaning?',
+      a: 'Dario uses deep extraction cleaning, which is what most people mean by steam cleaning. The carpet is cleaned and the dirty water is extracted back out, lifting stains, traffic marks and odour.',
+    },
+    {
+      q: 'How long does carpet take to dry?',
+      a: 'It depends on the carpet, the weather and how much airflow the room gets. Dario will give you an idea for your job when he quotes and again when he finishes.',
+    },
+    {
+      q: 'How much does carpet cleaning cost?',
+      a: "Every job is quoted on the number of rooms, the size and the condition of the carpet. Call Dario on 0417 476 017 or send the form and he'll quote it for you.",
+    },
+    {
+      q: 'Do you do end-of-lease carpet cleaning?',
+      a: 'Yes. Carpet cleaning for rentals and end-of-lease cleans is part of the residential service.',
+    },
+    {
+      q: 'Can you clean lounges, rugs and mattresses too?',
+      a: 'Yes. As well as carpet, Dario cleans rugs, lounges, recliners, armchairs, dining chairs, ottomans and mattresses.',
+    },
+    {
+      q: 'Do you clean commercial carpet?',
+      a: 'Yes, for offices, community facilities, education spaces, strata properties and other high-use premises. See the commercial cleaning page for more.',
+    },
+  ],
+}

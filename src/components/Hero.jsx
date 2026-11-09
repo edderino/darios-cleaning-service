@@ -92,6 +92,13 @@ export default function Hero() {
               Get a quote
               <Arrow width={14} height={14} className="transition-transform group-hover:translate-x-0.5" />
             </Link>
+            <Link
+              to="/carpet-cleaning-canberra"
+              className="group inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-fg"
+            >
+              Carpet cleaning in Canberra
+              <Arrow width={14} height={14} className="transition-transform group-hover:translate-x-0.5" />
+            </Link>
           </motion.div>
         </div>
       </div>

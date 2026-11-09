@@ -17,6 +17,10 @@ export default function Footer() {
               {BUSINESS.email}
             </a>
             <span className="text-faint">·</span>
+            <Link to="/carpet-cleaning-canberra" className="transition-colors hover:text-fg">
+              Carpet cleaning
+            </Link>
+            <span className="text-faint">·</span>
             <Link to="/residential" className="transition-colors hover:text-fg">
               Residential
             </Link>
@@ -47,7 +51,7 @@ export default function Footer() {
           </div>
 
           <p className="text-sm text-faint">
-            {BUSINESS.hours} · © {new Date().getFullYear()} {BUSINESS.name}
+            Based in Evatt, serving Canberra and surrounds · {BUSINESS.hours} · © {new Date().getFullYear()} {BUSINESS.name}
           </p>
         </div>
       </div>
