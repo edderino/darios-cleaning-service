@@ -17,7 +17,7 @@ import couchAfter from '../assets/photos/couch-after.webp'
 const URL = 'https://www.darioscleaning.com.au/carpet-cleaning-canberra'
 const TITLE = "Carpet Cleaning Canberra | Steam Cleaning Since 1993 | Dario's"
 const DESC =
-  'Carpet, rug and upholstery cleaning across Canberra since 1993. Deep extraction for stains, traffic marks and odour, plus end-of-lease and commercial carpet. Call Dario on 0417 476 017.'
+  'Carpet, rug and upholstery steam cleaning across Canberra and Queanbeyan since 1993. Deep extraction for stains, traffic marks and odour, plus end-of-lease and commercial carpet. Call Dario on 0417 476 017.'
 
 const carpetReviews = REVIEWS.filter((r) => /carpet/i.test(r.service))
 
@@ -50,7 +50,10 @@ export default function CarpetCleaning() {
             serviceType: 'Carpet cleaning',
             url: URL,
             provider: { '@id': 'https://www.darioscleaning.com.au/#business' },
-            areaServed: { '@type': 'City', name: 'Canberra' },
+            areaServed: [
+              { '@type': 'City', name: 'Canberra' },
+              { '@type': 'City', name: 'Queanbeyan' },
+            ],
             description: DESC,
           },
           {
@@ -82,8 +85,8 @@ export default function CarpetCleaning() {
               Carpet cleaning in Canberra since 1993.
             </h1>
             <p className="mt-5 max-w-[560px] text-lg leading-relaxed text-muted">
-              Deep extraction cleaning, what most people call steam cleaning, for stained,
-              marked and tired carpets, rugs and lounges. Dario quotes the job, does the job,
+              Steam cleaning with deep extraction for stained, marked and tired
+              carpets, rugs and lounges. Dario quotes the job, does the job,
               and is the person you talk to the whole way through.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-5">
@@ -205,7 +208,7 @@ export default function CarpetCleaning() {
           <Reveal className="max-w-2xl">
             <Eyebrow>Where we work</Eyebrow>
             <h2 className="mt-4 text-[clamp(1.9rem,4vw,3rem)] font-semibold leading-tight tracking-tighter">
-              Carpet cleaning across Canberra.
+              Carpet cleaning across Canberra and Queanbeyan.
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-muted">
               Based in Evatt and working right across Canberra and surrounds, including:

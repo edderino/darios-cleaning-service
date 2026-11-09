@@ -51,7 +51,7 @@ export default function Footer() {
           </div>
 
           <p className="text-sm text-faint">
-            Based in Evatt, serving Canberra and surrounds · {BUSINESS.hours} · © {new Date().getFullYear()} {BUSINESS.name}
+            Based in Evatt, serving Canberra, Queanbeyan and surrounds · {BUSINESS.hours} · © {new Date().getFullYear()} {BUSINESS.name}
           </p>
         </div>
       </div>

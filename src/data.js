@@ -50,7 +50,7 @@ export const SERVICES = [
   {
     n: '01',
     title: 'Carpet & Upholstery Cleaning',
-    line: 'Deep extraction for stained, marked or tired carpets, rugs and lounge suites.',
+    line: 'Steam cleaning with deep extraction for stained, marked or tired carpets, rugs and lounge suites.',
     team: 'dario',
   },
   {
@@ -99,7 +99,7 @@ export const COMMERCIAL_SERVICES = [
     n: '02',
     title: 'Commercial Carpet & Upholstery Cleaning',
     sentence:
-      'Deep extraction for marked, stained or heavily used carpets and upholstered seating in commercial and managed properties.',
+      'Steam cleaning with deep extraction for marked, stained or heavily used carpets and upholstered seating in commercial and managed properties.',
     who: 'For offices, community facilities, education spaces, strata properties and other high-use premises.',
     details: 'Also covers meeting rooms, common areas, hallways, stairs, fabric seating and scheduled maintenance cleans.',
     team: 'dario',
@@ -164,7 +164,7 @@ export const RESIDENTIAL_SERVICES = [
     n: '02',
     title: 'Carpet & Upholstery Cleaning',
     sentence:
-      'Deep extraction lifts stains, traffic marks and odour from carpets, rugs, lounges and mattresses, with end-of-lease cleaning available.',
+      'Steam cleaning with deep extraction lifts stains, traffic marks and odour from carpets, rugs, lounges and mattresses, with end-of-lease cleaning available.',
     who: 'For homes, rentals and end-of-lease cleans.',
     details:
       'Also covers rugs, lounges, mattresses, recliners, armchairs, dining chairs, ottomans, hallways and stairs.',
@@ -288,11 +288,11 @@ export const CARPET = {
   covers: [
     {
       title: 'Carpet cleaning',
-      line: 'Deep extraction lifts stains, traffic marks and odour from bedrooms, living areas, hallways and stairs.',
+      line: 'Steam cleaning with deep extraction lifts stains, traffic marks and odour from bedrooms, living areas, hallways and stairs.',
     },
     {
       title: 'Rug cleaning',
-      line: 'Rugs cleaned with the same deep extraction as wall-to-wall carpet.',
+      line: 'Rugs steam cleaned the same way as wall-to-wall carpet.',
     },
     {
       title: 'Upholstery & lounges',
@@ -322,7 +322,7 @@ export const CARPET = {
     },
     {
       head: 'The clean',
-      body: 'Dario assesses the carpet, treats marks and stains, and deep-cleans with extraction equipment suited to the job.',
+      body: 'Dario assesses the carpet, treats marks and stains, then steam cleans with deep extraction to pull the dirt back out.',
     },
     {
       head: 'Drying and walk-through',
@@ -338,11 +338,12 @@ export const CARPET = {
     'Weston Creek',
     'Molonglo Valley',
     'Tuggeranong',
+    'Queanbeyan',
   ],
   faqs: [
     {
-      q: 'Is this steam cleaning?',
-      a: 'Dario uses deep extraction cleaning, which is what most people mean by steam cleaning. The carpet is cleaned and the dirty water is extracted back out, lifting stains, traffic marks and odour.',
+      q: 'Do you steam clean carpets?',
+      a: 'Yes. Dario steam cleans carpets, with deep extraction pulling the dirty water and grime back out of the fibres. That is what lifts stains, traffic marks and odour rather than just wetting the surface.',
     },
     {
       q: 'How long does carpet take to dry?',
