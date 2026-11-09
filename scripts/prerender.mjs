@@ -3,7 +3,7 @@
 // <title>, <meta> and <link> tags into <head>, and writes a static file Vercel
 // serves directly:
 //   /               -> dist/index.html
-//   /residential    -> dist/residential.html  (served at /residential via cleanUrls)
+//   /residential    -> dist/residential.html  (served at /residential via vercel.json rewrites)
 //   unknown routes  -> dist/404.html          (served with a real 404 status)
 import fs from 'node:fs'
 import path from 'node:path'
