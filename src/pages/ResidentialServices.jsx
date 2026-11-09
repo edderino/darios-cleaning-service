@@ -18,7 +18,7 @@ export default function ResidentialServices() {
       <meta name="robots" content="index, follow" />
       <link rel="canonical" href="https://www.darioscleaning.com.au/residential" />
 
-      <meta property="og:site_name" content="Dario's Cleaning Service" />
+      <meta property="og:site_name" content="Dario's Cleaning" />
       <meta property="og:url" content="https://www.darioscleaning.com.au/residential" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content="Residential Cleaning Canberra | Carpet, Tile & Window Cleaning | Dario's" />

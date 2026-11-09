@@ -10,7 +10,7 @@ import commercialCarpetCleaning from './assets/photos/commercial-carpet-cleaning
 import commercialWindowCleaning from './assets/photos/commercial-window-cleaning.webp'
 
 export const BUSINESS = {
-  name: "Dario's Cleaning Service",
+  name: "Dario's Cleaning",
   tagline: "Dirt's Final Destination",
   phoneRaw: '0417476017',
   phoneDisplay: '0417 476 017',

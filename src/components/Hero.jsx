@@ -34,7 +34,7 @@ export default function Hero() {
       <div className="relative md:absolute md:inset-0 md:flex md:items-center">
         <div className="wrap py-10 md:py-0">
           <motion.div {...rise(0)}>
-            <Eyebrow as="h1">Dario&rsquo;s Cleaning Service · Established 1993 · Canberra</Eyebrow>
+            <Eyebrow as="h1">Dario&rsquo;s Cleaning · Established 1993 · Canberra</Eyebrow>
           </motion.div>
 
           <motion.p

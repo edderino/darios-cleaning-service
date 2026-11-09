@@ -1,4 +1,4 @@
-# Dario's Cleaning Service
+# Dario's Cleaning
 
 Modern, restrained marketing site. **React + Vite + Tailwind + Framer Motion.**
 
@@ -60,7 +60,7 @@ or
    - `MAILGUN_API_KEY`
    - `MAILGUN_DOMAIN`
    - `MAILGUN_TO` — the inbox that should receive quote requests
-   - `MAILGUN_FROM` — e.g. `"Dario's Cleaning Service <noreply@yourdomain>"`
+   - `MAILGUN_FROM` — e.g. `"Dario's Cleaning <noreply@yourdomain>"`
 3. Redeploy. See `.env.example` for the full list.
 
 ### Moving to a shared, multi-client contact API later
