@@ -51,7 +51,8 @@ export default function Footer() {
           </div>
 
           <p className="text-sm text-faint">
-            Based in Evatt, serving Canberra, Queanbeyan and surrounds · {BUSINESS.hours} · © {new Date().getFullYear()} {BUSINESS.name}
+            Based in Evatt, serving Canberra, Queanbeyan and surrounds · {BUSINESS.hours} · © {new Date().getFullYear()} {BUSINESS.name} · Website by{' '}
+            <a href="https://www.redmarkdesigns.com.au/" target="_blank" rel="noopener" className="underline underline-offset-2 transition-colors hover:text-fg">Redmark Designs</a>
           </p>
         </div>
       </div>
